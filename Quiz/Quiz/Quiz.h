@@ -4,7 +4,7 @@
 #include <cctype>
 using namespace std;
 
-class QuizStats
+class Quiz
 {
 private:
 	int finalScore;
@@ -32,9 +32,9 @@ public:
 	{
 		int indexer;
 		indexer = 0;
-		for (int i = 0; i < sizeof(customQuestions); i++)
+		for (int i = 0; i < customQuestions.size(); i++)
 		{
-			std::cout << customQuestions[indexer] << std::endl;
+			std::cout << customQuestions[indexer];
 			indexer++;
 		}
 	}

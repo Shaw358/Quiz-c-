@@ -7,21 +7,21 @@
 
 int main()
 {
-	QuizStats quizStats;
+	Quiz quiz;
 	std::string input;
 
 	int choice;
 
-	quizStats.questions[0] = "When did World War 2 start?";
-	quizStats.questions[1] = "When did World War 2 end?";
-	quizStats.questions[2] = "When did the Soviet Union join the war (against Germany)?";
-	quizStats.questions[3] = "How many people died in World War 2";
-	quizStats.questions[4] = "When did the D-Day start?";
+	quiz.questions[0] = "When did World War 2 start?";
+	quiz.questions[1] = "When did World War 2 end?";
+	quiz.questions[2] = "When did the Soviet Union join the war (against Germany)?";
+	quiz.questions[3] = "How many people died in World War 2";
+	quiz.questions[4] = "When did the D-Day start?";
 
     std::cout << "Hello and welcome to this quick quiz about LIFE, EXISTENCE AND EVERYTHING! (but mainly about WW2! shhhh... don't tell Jesse!)\n";
 	std::cout << "Are you ready? Y/N \n";
 
-	quizStats.setScore(0);
+	quiz.setScore(0);
 
 	while (true) 
 	{
@@ -42,7 +42,7 @@ int main()
 	}
 
 
-	std::cout << quizStats.questions[0] << std::endl;
+	std::cout << quiz.questions[0] << std::endl;
 	std::cout << "Answers: " << std::endl;
 	std::cout << "1. 1937\n2. 1939\n3. 1944\n4. 1945" << std::endl;
 	while (true) 
@@ -54,7 +54,7 @@ int main()
 			if (choice == 2)
 			{
 				std::cout << "Correct! The war started on the 1st of September with the invasion of Poland." << std::endl;
-				quizStats.setScore(1);
+				quiz.setScore(1);
 			}
 			else
 			{
@@ -69,7 +69,7 @@ int main()
 	}
 	
 
-	std::cout << quizStats.questions[1] << std::endl;
+	std::cout << quiz.questions[1] << std::endl;
 	std::cout << "Answers: " << std::endl;
 	std::cout << "1. 1937\n2. 1939\n3. 1944\n4. 1945" << std::endl;
 	while (true)
@@ -81,7 +81,7 @@ int main()
 			if (choice == 4)
 			{
 				std::cout << "Correct! The war ended on the 2nd of September with the surrender of Japan." << std::endl;
-				quizStats.setScore(1);
+				quiz.setScore(1);
 			}
 			else
 			{
@@ -97,7 +97,7 @@ int main()
 
 	
 
-	std::cout << quizStats.questions[2] << std::endl;
+	std::cout << quiz.questions[2] << std::endl;
 	std::cout << "Answers: " << std::endl;
 	std::cout << "1. 1939\n2. 1940\n3. 1941\n4. 1942" << std::endl;
 	while (true)
@@ -109,7 +109,7 @@ int main()
 			if (choice == 3)
 			{
 				std::cout << "Correct! The Soviet Union entered the war on the 22nd of June when Germany invaded." << std::endl;
-				quizStats.setScore(1);
+				quiz.setScore(1);
 			}
 			else
 			{
@@ -124,7 +124,7 @@ int main()
 	}
 
 
-	std::cout << quizStats.questions[3] << std::endl;
+	std::cout << quiz.questions[3] << std::endl;
 	std::cout << "Answers: " << std::endl;
 	std::cout << "1. 10.000.000 - 20.000.000\n2. 70.000.000 - 85.000.000\n3. 45.000.000 - 60.000.00\n4. 90.000.000 - 100.000.000" << std::endl;
 	while (true)
@@ -136,7 +136,7 @@ int main()
 			if (choice == 2)
 			{
 				std::cout << "Correct! The war costed about 70.000.000 - 85.000.000 and is the deadliest conflict in human history." << std::endl;
-				quizStats.setScore(1);
+				quiz.setScore(1);
 			}
 			else
 			{
@@ -151,7 +151,7 @@ int main()
 	}
 
 	
-	std::cout << quizStats.questions[4] << std::endl;
+	std::cout << quiz.questions[4] << std::endl;
 	std::cout << "Answers: " << std::endl;
 	std::cout << "1. 6th of June\n2. 22nd of June\n3. 1st of September\n4. 7th of December" << std::endl;
 	while (true)
@@ -163,7 +163,7 @@ int main()
 			if (choice == 1)
 			{
 				std::cout << "Correct! D-day would be the largest amphibious attack launched to this date." << std::endl;
-				quizStats.setScore(1);
+				quiz.setScore(1);
 			}
 			else
 			{
@@ -182,17 +182,17 @@ int main()
 		std::cout << "" << std::endl;
 	}
 
-	if (quizStats.getScore() <= 1)
+	if (quiz.getScore() <= 1)
 	{
-		std::cout << "*Angry Stalin noises*\nScore: " << quizStats.getScore() << "/5";
+		std::cout << "*Angry Stalin noises*\nScore: " << quiz.getScore() << "/5";
 	}
-	else if (quizStats.getScore() >= 2 && quizStats.getScore() <= 3)
+	else if (quiz.getScore() >= 2 && quiz.getScore() <= 3)
 	{
-		std::cout << "*Tripple chin Hirohito satisfiction noises*\nScore: " << quizStats.getScore() << "/5";
+		std::cout << "*Tripple chin Hirohito satisfiction noises*\nScore: " << quiz.getScore() << "/5";
 	}
-	else if (quizStats.getScore() >= 4)
+	else if (quiz.getScore() >= 4)
 	{
-		std::cout << "*Happy panzer noises*\nScore: " << quizStats.getScore() << "/5";
+		std::cout << "*Happy panzer noises*\nScore: " << quiz.getScore() << "/5";
 	}
 
 	for (int i = 0; i < 5; i++) 
@@ -223,9 +223,10 @@ int main()
 	int indexer = 0;
 	while (true)
 	{
+		std::cout << "Add your question..." << std::endl;
 		std::cin >> input;
 		
-		quizStats.setQuestion(input);
+		quiz.setQuestion(input);
 
 		std::cout << "Do you wish to add another one? Y/N" << std::endl;
 		std::cin >> input;
@@ -247,7 +248,7 @@ int main()
 
 	indexer = 0;
 	std::cout << "Questions added: " << std::endl;
-	quizStats.getQuestions();
+	quiz.getQuestions();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

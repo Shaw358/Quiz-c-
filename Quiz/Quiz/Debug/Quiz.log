@@ -1,2 +1,3 @@
 ﻿  Quiz.cpp
+C:\Users\User\Desktop\C++\Quiz\Quiz\Quiz.h(35,21): warning C4018: '<': signed/unsigned mismatch
   Quiz.vcxproj -> C:\Users\User\Desktop\C++\Quiz\Debug\Quiz.exe
