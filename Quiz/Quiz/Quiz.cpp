@@ -200,53 +200,24 @@ int main()
 		std::cout << "" << std::endl;
 	}
 
-	std::cout << "Do you wish to add your own question?\nY/N" << std::endl;
 	while (true)
 	{
-		std::cin >> input;
-		if (input == "Y" || input == "y")
-		{
-			std::cout << "Okay!\n";
-			break;
-		}
-		else if (input == "N" || input == "n")
-		{
-			std::cout << "thanks for playing...";
-			exit(0);
-		}
-		else if (input != "Y" || input != "y" || input != "N" || input != "n")
-		{
-			std::cout << "That wasn't an option... retard... Try again!" << std::endl;
-		}
-	}
-
-	int indexer = 0;
-	while (true)
-	{
-		std::cout << "Add your question..." << std::endl;
-		std::cin >> input;
-		
-		quiz.setQuestion(input);
-
-		std::cout << "Do you wish to add another one? Y/N" << std::endl;
+		std::cout << "Do you wish to add a question? Y/N" << std::endl;
 		std::cin >> input;
 		if (input == "Y" || input == "y") 
 		{
 			std::cout << "Okay!" << std::endl;
+			std::cout << "Add your question..." << std::endl;
+			std::cin >> input;
+
+			quiz.setQuestion(input);
 		}
 		else if (input == "N" || input == "n")
 		{
 			break;
 		}
-
-		if (indexer >= 4)
-		{
-			break;
-		}
-		indexer++;
+		input = "ok";
 	}
-
-	indexer = 0;
 	std::cout << "Questions added: " << std::endl;
 	quiz.getQuestions();
 }
