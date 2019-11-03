@@ -8,10 +8,10 @@ class Quiz
 {
 private:
 	int finalScore;
+	
+	std::vector<string> customQuestions;
 public:
 	std::string questions[5];
-
-	std::vector<string> customQuestions;
 
 	void setQuestion(std::string question)
 	{
